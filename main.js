@@ -1,31 +1,17 @@
-//1задание
-let arr = [
-	"321",
-	"22213",
-	"213213",
-	"2131231",
-	"32131",
-	"45435345",
-	"12321312",
-];
+let week = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"],
+	toDay = new Date().getDay() - 1;
 
-for (let i = 0; i < arr.length; i++) {
-	let a = arr[i];
-	if (a.startsWith("2") || a.startsWith("4")) {
-		console.log(a);
-	}
-}
-//2задание
-let n = 100;
-for (let i = 2; i <= n; i++) {
-	let a = 1;
-	for (let j = 2; j <= i / 2 && a === 1; j = j + 1) {
-		if (i % j === 0) {
-			a = 0;
+for (let i = 0; i < week.length; i++) {
+	if (i == toDay) {
+		if (week[i] == "сб" || week[i] == "вс") {
+			document.write(`<p><b><i>${week[i]}</i></b></p>`);
+		} else {
+			document.write(`<i><p><b>${week[i]}</b></p></i>`);
 		}
-	}
-
-	if (a === 1) {
-		console.log(i + ": делители этого числа: " + 1 + ", " + i);
+	} else if (week[i] == "сб" || week[i] == "вс") {
+		document.write(`<i><p><b>${week[i]}</b></p></i>`);
+	} else {
+		document.write(`<p>${week[i]}</p>`);
 	}
 }
+console.log(week);
