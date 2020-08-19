@@ -36,7 +36,7 @@ function showData(dataAndTime) {
     if (month.length < 2) {
         month = "0" + month;
     }
-    alert((h + ":" + m + ":" + s + " " + date + "." + month + "." + year));
+    document.getElementById('b').innerHTML = (h + ":" + m + ":" + s + " " + date + "." + month + "." + year);
 }
 showData(dataAndTime);
 let changeHour = function (n) {
@@ -53,9 +53,9 @@ let changeHour = function (n) {
     }
 }
 
-alert('Сегодня ' + day[d] + ", " + date + " " + month[dataAndTime.getMonth()] +
+document.getElementById('a').innerHTML = 'Сегодня ' + day[d] + ", " + date + " " + month[dataAndTime.getMonth()] +
     " " + year + " года, " + h + " " + changeHour(h) + " " + m +
-    " " + changeHour(m) + " " + s + " " + changeHour(s));
+    " " + changeHour(m) + " " + s + " " + changeHour(s);
 
 
 function clock_2() {
